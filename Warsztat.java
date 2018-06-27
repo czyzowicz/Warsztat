@@ -59,6 +59,7 @@ public class Warsztat {
                 ie.printStackTrace();
             }
             Samochod losowySamochod = Samochod.stworzLosowySamochod();
+            System.out.println("\n");
             System.out.println("Klient przyjechał do warsztatu z samochodem marki " + losowySamochod.getMarka());
             System.out.println("Czy potrafimy obsłużyć samochód klienta : " + warsztat1.czyMoznaNaprawic(losowySamochod));
 
@@ -67,11 +68,12 @@ public class Warsztat {
                 System.out.println(losowySamochod);
                 System.out.println("Będzie Pan zadowolony i Pana żona też!");
                 System.out.println(rachunek(losowySamochod).toString());
+                System.out.println("\n");
                 warsztat1.naprawa(losowySamochod);
                 System.out.println(losowySamochod);
                 warsztat1.setZysk(warsztat1.kosztNaprawy(losowySamochod) - warsztat1.kosztKlienta(losowySamochod));
                 dziennyZysk = warsztat1.getZysk() + dziennyZysk;
-            } else {
+                } else {
                 System.out.println("Przkyto nam nie możemy naprawić Pana samochodu.\nKoszt diagnostyki wynosi: " + KOSZT_BEZ_WYMIANY + " zł.");
                 dziennyZysk = dziennyZysk + KOSZT_BEZ_WYMIANY;
             }
